@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelencia en la Gestión Energética - ComparamosTuLuz.es</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
+
+        .slide-wrapper {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateX(100%) rotateY(45deg) scale(0.8);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0) rotateY(0deg) scale(1);
+            z-index: 10;
+        }
+
+        .slide.prev {
+            transform: translateX(-100%) rotateY(-45deg) scale(0.8);
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+            background: rgba(15, 27, 45, 0.9);
+            padding: 15px 30px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-btn {
+            background: #FFC300;
+            border: none;
+            color: #0F1B2D;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 195, 0, 0.4);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            color: #FFC300;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 18px;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #FFC300, #FFD700);
+            transition: width 0.3s ease;
+            z-index: 1001;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .slide.active .animate-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .slide.active .animate-left {
+            animation: fadeInLeft 0.8s ease forwards;
+        }
+
+        .slide.active .animate-right {
+            animation: fadeInRight 0.8s ease forwards;
+        }
+
+        .slide.active .animate-scale {
+            animation: scaleIn 0.8s ease forwards;
+        }
+
+        /* Delay classes */
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
+        .delay-6 { animation-delay: 0.6s; opacity: 0; }
+
+        /* Fullscreen button */
+        .fullscreen-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(15, 27, 45, 0.9);
+            border: 2px solid #FFC300;
+            color: #FFC300;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fullscreen-btn:hover {
+            background: #FFC300;
+            color: #0F1B2D;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Pantalla Completa</button>
+    
+    <div class="presentation-container">
+        <div class="slide-wrapper" id="slideWrapper"></div>
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" onclick="previousSlide()">◀ Anterior</button>
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+        </div>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Siguiente ▶</button>
+    </div>
+
+    <script src="slides-data.js"></script>
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = 12;
+
+        function loadSlides() {
+            const wrapper = document.getElementById('slideWrapper');
+            
+            for (let i = 1; i <= totalSlides; i++) {
+                const iframe = document.createElement('iframe');
+                iframe.src = `${i}.txt`;
+                iframe.className = 'slide';
+                iframe.style.border = 'none';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                
+                if (i === 1) {
+                    iframe.classList.add('active');
+                }
+                
+                wrapper.appendChild(iframe);
+            }
+            
+            updateNavigation();
+        }
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev');
+                
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i < index) {
+                    slide.classList.add('prev');
+                }
+            });
+            
+            currentSlideIndex = index;
+            updateNavigation();
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                showSlide(currentSlideIndex + 1);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlideIndex > 0) {
+                showSlide(currentSlideIndex - 1);
+            }
+        }
+
+        function updateNavigation() {
+            document.getElementById('currentSlide').textContent = currentSlideIndex + 1;
+            document.getElementById('totalSlides').textContent = totalSlides;
+            
+            document.getElementById('prevBtn').disabled = currentSlideIndex === 0;
+            document.getElementById('nextBtn').disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentSlideIndex + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (e.key === 'Home') {
+                showSlide(0);
+            } else if (e.key === 'End') {
+                showSlide(totalSlides - 1);
+            }
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            loadSlides();
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; }
+        .slide-container {
+            width: 1280px;
+            height: 720px; /* keep required min-height */
+            background-color: #F0F2F5;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            overflow: hidden;
+        }
+        .content-column {
+            width: 55%;
+            padding-top: 60px;
+            padding-left: 60px;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .accent-bar {
+            width: 60px;
+            height: 8px;
+            background-color: #FFC300;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 40px;
+            font-weight: 900;
+            color: #0F1B2D;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .sections-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .section-box {
+            border-top: 2px solid #0F1B2D;
+            padding-top: 4px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFC300;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            background-color: #0F1B2D;
+            padding: 2px 6px;
+            width: fit-content;
+        }
+        .section-text {
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333333;
+            margin: 0;
+        }
+        .contact-footer {
+            margin-top: auto;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            border-top: 1px solid #CCCCCC;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-info {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F1B2D;
+            margin: 0;
+        }
+        .contact-web {
+            font-size: 24px;
+            font-weight: 900;
+            color: #FFC300;
+            text-decoration: none;
+            background-color: #0F1B2D;
+            padding: 4px 12px;
+            display: inline-block;
+        }
+        .image-column {
+            width: 45%;
+            position: relative;
+            background-color: #0F1B2D;
+        }
+        .image-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 27, 45, 0.7), rgba(255, 195, 0, 0.3));
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-column">
+            <div class="accent-bar"></div>
+            <h2>Resultados y Próximos Pasos</h2>
+            <div class="sections-grid">
+                <div class="section-box">
+                    <div class="section-title">Casos de Éxito</div>
+                    <p class="section-text">
+                        • Comunidad 40 vecinos: 2.400€ ahorro/año.<br>
+                        • Polígono Oficinas: -22% en término fijo.<br>
+                        • Finca Servicios: 800€/año ahorro reactiva.
+                    </p>
+                </div>
+                <div class="section-box">
+                    <div class="section-title">Hoja de Ruta</div>
+                    <p class="section-text">
+                        1. Firma de convenio de colaboración.<br>
+                        2. Envío de facturas para auditoría.<br>
+                        3. Presentación de estudios de ahorro.<br>
+                        4. Ejecución y monitorización continua.
+                    </p>
+                </div>
+            </div>
+            <div class="contact-footer">
+                <div class="contact-info">Lideremos juntos la transición energética</div>
+                <a href="https://www.comparamostuluz.es" class="contact-web">www.comparamostuluz.es</a>
+                <div style="font-size:16px;color:#333333;">Atención personalizada</div>
+            </div>
+        </div>
+        <div class="image-column">
+            <img src="business_success_team_1769435169013.png" alt="Madrid Skyline Closing">
+            <div class="image-overlay"></div>
+        </div>
+    </div>
+</body>
+</html>

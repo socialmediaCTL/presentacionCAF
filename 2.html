@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {margin: 0;}
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #F0F2F5;
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            display: flex;
+            overflow: hidden;
+        }
+        .content-section {
+            width: 60%;
+            padding-top: 60px;
+            padding-left: 80px;
+            padding-right: 40px;
+        }
+        .accent-line {
+            width: 80px;
+            height: 8px;
+            background-color: #FFC300;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 48px;
+            font-weight: 900;
+            color: #0F1B2D;
+            line-height: 1.1;
+            text-transform: uppercase;
+            max-width: 700px;
+            margin-bottom: 20px;
+        }
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding-top: 12px;
+        }
+        .point-box {
+            border-top: 2px solid #0F1B2D;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .point-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFC300;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .point-text {
+            font-size: 20px;
+            line-height: 1.2;
+            font-weight: 400;
+            margin: 0;
+        }
+        .image-section {
+            width: 40%;
+            background-color: #0F1B2D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="content-section">
+            <div class="accent-line"></div>
+            <h2>El mercado eléctrico actual es un entorno de alta volatilidad</h2>
+            <div class="main-content">
+                <div class="point-box">
+                    <span class="point-number">01</span>
+                    <p class="point-text">Cambios regulatorios frecuentes generan incertidumbre.</p>
+                </div>
+                <div class="point-box">
+                    <span class="point-number">02</span>
+                    <p class="point-text">Nuevos tramos horarios complican la optimización.</p>
+                </div>
+                <div class="point-box">
+                    <span class="point-number">03</span>
+                    <p class="point-text">La factura es uno de los mayores gastos comunitarios.</p>
+                </div>
+                <div class="point-box">
+                    <span class="point-number">04</span>
+                    <p class="point-text">Falta de transparencia en renovaciones automáticas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="market_volatility_concept_1769440812953.png" alt="Volatilidad del Mercado">
+        </div>
+    </div>
+</body>
+</html>

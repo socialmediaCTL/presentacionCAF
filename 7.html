@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #F0F2F5;
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            display: flex;
+            overflow: hidden;
+        }
+        .text-section {
+            width: 55%;
+            padding-top: 80px; /* keep title top padding */
+            padding-left: 30px;
+            padding-right: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+        .accent-bar {
+            width: 60px;
+            height: 8px;
+            background-color: #FFC300;
+            margin-bottom: 8px;
+        }
+        h2 {
+            font-size: 44px;
+            font-weight: 900;
+            color: #0F1B2D;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .audit-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 18px;
+            row-gap: 6px;
+            align-items: start;
+        }
+        .audit-item {
+            border-left: 4px solid #FFC300;
+            padding-left: 10px;
+            padding-top: 0;
+        }
+        .audit-item h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0F1B2D;
+            margin-bottom: 4px;
+        }
+        .audit-item p {
+            font-size: 18px;
+            line-height: 1.25;
+            color: #333333;
+            margin: 0;
+        }
+        .highlight {
+            color: #FFC300;
+            font-weight: 900;
+            background-color: #0F1B2D;
+            padding: 0 4px;
+        }
+        .image-section {
+            width: 45%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #E0E0E0;
+            padding: 12px;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="text-section">
+            <div class="accent-bar"></div>
+            <h2>La auditoría de potencia revela ahorros invisibles inmediatos</h2>
+            <div class="audit-list">
+                <div class="audit-item">
+                    <h3>Potencia Sobredimensionada</h3>
+                    <p>El <span class="highlight">40%</span> de las comunidades paga por potencia no utilizada.</p>
+                </div>
+                <div class="audit-item">
+                    <h3>Análisis de Picos</h3>
+                    <p>Revisamos los picos de los últimos 12 meses para un ajuste técnico.</p>
+                </div>
+                <div class="audit-item">
+                    <h3>Reducción del Término Fijo</h3>
+                    <p>Baja el término fijo desde el primer mes sin cambiar hábitos.</p>
+                </div>
+                <div class="audit-item">
+                    <h3>Optimización de Costes</h3>
+                    <p>Optimizamos el coste fijo frente a la volatilidad del kWh.</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="data_analysis_audit_1769435126754.png" alt="Ahorro de Energía">
+        </div>
+    </div>
+</body>
+</html>

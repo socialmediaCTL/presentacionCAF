@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html, body { margin: 0; padding: 0; }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #F0F2F5;
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            display: flex;
+            overflow: hidden;
+        }
+        .left-panel {
+            width: 40%;
+            background-color: #0F1B2D;
+            color: #F0F2F5;
+            padding-top: 80px;
+            padding-left: 80px;
+            display: flex;
+            flex-direction: column;
+        }
+        .right-panel {
+            width: 60%;
+            padding-top: 40px;
+            padding-left: 60px;
+            padding-right: 80px;
+        }
+        .accent-bar {
+            width: 60px;
+            height: 8px;
+            background-color: #FFC300;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .zero-cost {
+            font-size: 220px;
+            font-weight: 900;
+            color: #FFC300;
+            line-height: 1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .model-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .model-item {
+            border-top: 2px solid #0F1B2D;
+            padding-top: 12px;
+        }
+        .model-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0F1B2D;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .model-text {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .highlight {
+            color: #FFC300;
+            font-weight: 700;
+            background-color: #0F1B2D;
+            padding: 0 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="left-panel">
+            <div class="accent-bar"></div>
+            <h2>Un modelo de negocio "Win-Win"</h2>
+            <div class="zero-cost">0€</div>
+        </div>
+        <div class="right-panel">
+            <div class="model-list">
+                <div class="model-item">
+                    <div class="model-title">Consultoría Gratuita</div>
+                    <p class="model-text">Nuestra gestión es totalmente <span class="highlight">sin coste</span> para el Administrador y para la Comunidad de Propietarios.</p>
+                </div>
+                <div class="model-item">
+                    <div class="model-title">Acuerdos por Volumen</div>
+                    <p class="model-text">Obtenemos nuestros ingresos mediante acuerdos de gestión por volumen directamente con las comercializadoras.</p>
+                </div>
+                <div class="model-item">
+                    <div class="model-title">Ahorro Neto</div>
+                    <p class="model-text">El ahorro conseguido impacta de forma íntegra y neta en la cuenta bancaria de la comunidad.</p>
+                </div>
+                <div class="model-item">
+                    <div class="model-title">Sin Compromiso</div>
+                    <p class="model-text">No hay letra pequeña: si nuestro estudio no detecta un ahorro real o beneficio, no se realiza ningún cambio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</html>

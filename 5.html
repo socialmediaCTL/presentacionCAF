@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #F0F2F5;
+            font-family: 'Inter', sans-serif;
+            color: #333333;
+            display: flex;
+            align-items: flex-start; /* prevent children stretching to full height */
+            overflow: hidden;
+        }
+        .text-section {
+            width: 55%;
+            padding-top: 80px; /* keep title top padding */
+            padding-left: 48px;
+            padding-right: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+        .accent-bar {
+            width: 60px;
+            height: 8px;
+            background-color: #FFC300;
+            margin-bottom: 18px;
+        }
+        h2 {
+            font-size: 44px;
+            font-weight: 900;
+            color: #0F1B2D;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .mission-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 20px; /* slightly reduced gaps to tighten layout */
+            align-content: flex-start;
+        }
+        .mission-item {
+            width: calc(50% - 10px);
+            box-sizing: border-box;
+            border-left: 4px solid #FFC300;
+            padding-top: 2px;
+            padding-left: 12px;
+        }
+        .mission-item h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0F1B2D;
+            margin-bottom: 6px;
+        }
+        .mission-item p {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #333333;
+            margin: 0;
+        }
+        .image-section {
+            width: 45%;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid #E0E0E0;
+            height: 720px;
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="text-section">
+            <div class="accent-bar"></div>
+            <h2>Nuestra misión: Convertir la energía en una ventaja competitiva</h2>
+            <div class="mission-list">
+                <div class="mission-item">
+                    <h3>Liberación Administrativa</h3>
+                    <p>Quitamos la gestión burocrática y las incidencias del despacho.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>Garantía de Ahorro</h3>
+                    <p>Acceso al precio más bajo en cada renovación contractual.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>Comunicación Profesional</h3>
+                    <p>Informes técnicos visuales que agilizan sus Juntas de Propietarios.</p>
+                </div>
+                <div class="mission-item">
+                    <h3>Valor Añadido</h3>
+                    <p>Convertimos problemas en un servicio diferencial para comunidades.</p>
+                </div>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="volt_mascot.png" alt="Volt - Mascota Energética">
+        </div>
+    </div>
+</body>
+</html>

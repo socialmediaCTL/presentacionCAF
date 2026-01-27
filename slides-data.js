@@ -8,7 +8,9 @@ const slidesData = [
       <div class="accent-bar"></div>
       <h1>Excelencia en la Gestión Energética</h1>
       <p class="subtitle">Soluciones de ahorro, transparencia y eficiencia para el Colegiado de Madrid (CAFMadrid).</p>
-      <a href="https://www.comparamostuluz.es" class="web-url">www.<span class="text-white">comparamostuluz</span>.es</a>
+      <div class="centered-container">
+        <a href="https://www.comparamostuluz.es" class="web-url">www.<span class="text-white">comparamostuluz</span>.es</a>
+      </div>
     `
   },
   {
@@ -28,16 +30,16 @@ const slidesData = [
   },
   {
     id: 3,
-    image: 'stressed_administrator_hyperreal_1769441273949.png',
+    image: 'professional_administrator_analytics.png',
     imagePosition: 'right',
     content: `
       <div class="accent-bar"></div>
-      <h2>La gestión energética consume tiempo valioso del Administrador</h2>
+      <h2>Oportunidades de Optimización en la Gestión Energética</h2>
       <div class="points-list">
         <div class="point-item"><div class="point-icon">1</div><div><h3>Reclamaciones constantes</h3><p>Atención diaria de quejas de vecinos por facturas inesperadamente altas.</p></div></div>
         <div class="point-item"><div class="point-icon">2</div><div><h3>Gestión de incidencias</h3><p>Trato tedioso con call centers ineficientes para resolver cortes.</p></div></div>
         <div class="point-item"><div class="point-icon">3</div><div><h3>Carga burocrática</h3><p>Burocracia interminable que resta tiempo a la gestión estratégica.</p></div></div>
-        <div class="point-item"><div class="point-icon">4</div><div><h3>Estrés en Juntas</h3><p>Dificultad para justificar incrementos de gastos energéticos.</p></div></div>
+        <div class="point-item"><div class="point-icon">4</div><div><h3>Transparencia en Juntas</h3><p>Oportunidad de presentar datos claros que faciliten la toma de decisiones.</p></div></div>
       </div>
     `
   },
@@ -64,10 +66,10 @@ const slidesData = [
       <div class="accent-bar"></div>
       <h2>Nuestra misión: Convertir la energía en una ventaja competitiva</h2>
       <div class="mission-list">
-        <div class="mission-item"><h3>Liberación Administrativa</h3><p>Quitamos la gestión burocrática y las incidencias del despacho.</p></div>
-        <div class="mission-item"><h3>Garantía de Ahorro</h3><p>Acceso al precio más bajo en cada renovación contractual.</p></div>
-        <div class="mission-item"><h3>Comunicación Profesional</h3><p>Informes técnicos visuales que agilizan sus Juntas de Propietarios.</p></div>
-        <div class="mission-item"><h3>Valor Añadido</h3><p>Convertimos problemas en un servicio diferencial para comunidades.</p></div>
+        <div class="mission-item"><h3>🚀 Liberación Administrativa</h3><p>Quitamos la gestión burocrática y las incidencias del despacho.</p></div>
+        <div class="mission-item"><h3>💰 Garantía de Ahorro</h3><p>Acceso al precio más bajo en cada renovación contractual.</p></div>
+        <div class="mission-item"><h3>📊 Comunicación Profesional</h3><p>Informes técnicos visuales que agilizan sus Juntas de Propietarios.</p></div>
+        <div class="mission-item"><h3>💎 Valor Añadido</h3><p>Convertimos problemas en un servicio diferencial para comunidades.</p></div>
       </div>
     `
   },
@@ -120,10 +122,10 @@ const slidesData = [
       <div class="accent-bar"></div>
       <h2>La auditoría de potencia revela ahorros invisibles inmediatos</h2>
       <div class="audit-list">
-        <div class="audit-item"><h3>Potencia Sobredimensionada</h3><p>El <span class="highlight">40%</span> de las comunidades paga por potencia no utilizada.</p></div>
-        <div class="audit-item"><h3>Análisis de Picos</h3><p>Revisamos los picos de los últimos 12 meses para un ajuste técnico.</p></div>
-        <div class="audit-item"><h3>Reducción del Término Fijo</h3><p>Baja el término fijo desde el primer mes sin cambiar hábitos.</p></div>
-        <div class="audit-item"><h3>Optimización de Costes</h3><p>Optimizamos el coste fijo frente a la volatilidad del kWh.</p></div>
+        <div class="audit-item"><h3>⚡ Potencia Sobredimensionada</h3><p>El <span class="highlight">40%</span> de las comunidades paga por potencia no utilizada.</p></div>
+        <div class="audit-item"><h3>📉 Análisis de Picos</h3><p>Revisamos los picos de los últimos 12 meses para un ajuste técnico.</p></div>
+        <div class="audit-item"><h3>📉 Reducción del Término Fijo</h3><p>Baja el término fijo desde el primer mes sin cambiar hábitos.</p></div>
+        <div class="audit-item"><h3>⚙️ Optimización de Costes</h3><p>Optimizamos el coste fijo frente a la volatilidad del kWh.</p></div>
       </div>
     `
   },
@@ -152,7 +154,6 @@ const slidesData = [
       <div class="digital-features">
         <div class="feature-item"><div class="feature-title">Panel de Control Único</div><p>Visualice todas sus comunidades, contratos y estados en un solo dashboard intuitivo.</p></div>
         <div class="feature-item"><div class="feature-title">Gestión de CUPS</div><p>Monitorización automática de puntos de suministro y evolución de consumo.</p></div>
-        <div class="feature-item"><div class="feature-title">Archivo Digital</div><p>Acceso inmediato a facturas, contratos históricos y comparativas.</p></div>
         <div class="feature-item"><div class="feature-title">Alertas Proactivas</div><p>Avisos automáticos de vencimientos para evitar renovaciones tácitas.</p></div>
       </div>
     `

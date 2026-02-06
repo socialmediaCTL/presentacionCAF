@@ -730,12 +730,13 @@
             }
             
             #slide1 .slide-title {
-                font-size: 42px;
+                font-size: 36px; /* Reduced from 42px */
             }
             
             .video-intro-btn {
-                padding: 14px 30px;
-                font-size: 16px;
+                padding: 12px 25px;
+                font-size: 14px;
+                transform: translate(-50%, -100px); /* Move higher to avoid overlap */
             }
             
             /* Slide 5 - Counter */
@@ -791,10 +792,28 @@
             }
             
             .nav-btn:disabled {
-                opacity: 0.5;
-                background: #333;
-                color: #666;
-                border: 1px solid #444;
+                opacity: 0.8; /* Increased from 0.5 */
+                background: #222;
+                color: #555;
+                border: 1px solid #333;
+                cursor: not-allowed;
+            }
+            
+            /* Slide 9 Title Optimization */
+            #slide9 .slide-title {
+                font-size: 56px;
+                width: 100%;
+                word-wrap: break-word;
+            }
+            
+            #slide1 .slide-title {
+                font-size: 32px;
+                line-height: 1.1;
+                margin-top: 20px;
+            }
+            
+            .video-intro-btn {
+                transform: translate(-50%, -150px); /* Even higher to clear nav */
             }
             
             .slide-counter {
@@ -841,6 +860,49 @@
                 padding: 10px 20px;
                 font-size: 14px;
             }
+            
+            /* Landscape Optimization for smaller phones */
+            @media (max-height: 500px) {
+                .slide-title {
+                    font-size: 32px !important;
+                    margin-bottom: 10px !important;
+                }
+                .slide-subtitle {
+                    font-size: 16px !important;
+                }
+                #slide1 .top-logo {
+                    width: 140px !important;
+                    top: 2% !important;
+                }
+                #slide1 .slide-content {
+                    margin-top: 100px !important;
+                }
+                #slide1 .slide-title {
+                    font-size: 24px !important;
+                }
+                .video-intro-btn {
+                    transform: translate(-50%, -80px) !important;
+                    padding: 8px 15px !important;
+                    font-size: 11px !important;
+                }
+                .nav-controls {
+                    bottom: 5px !important;
+                    padding: 5px 12px !important;
+                }
+                .nav-btn {
+                    padding: 8px 15px !important;
+                    min-width: 80px !important;
+                }
+                #slide9 .slide-title {
+                    font-size: 36px !important;
+                }
+                #slide5 .counter {
+                    font-size: 60px !important;
+                }
+                .fullscreen-btn, .toggle-script {
+                    top: 5px !important;
+                }
+            }
         }
         
         /* Small mobile devices (max-width: 480px) */
@@ -873,12 +935,13 @@
             }
             
             #slide1 .slide-title {
-                font-size: 32px;
+                font-size: 28px; /* Further reduced */
             }
             
             .video-intro-btn {
-                padding: 12px 25px;
-                font-size: 14px;
+                padding: 10px 20px;
+                font-size: 12px;
+                transform: translate(-50%, -120px); /* Even higher */
             }
             
             /* Slide 5 */
@@ -893,7 +956,11 @@
             
             /* Slide 9 */
             #slide9 .slide-title {
-                font-size: 80px;
+                font-size: 48px; /* Reduced from 80px */
+            }
+            
+            #slide9 .slide-content {
+                padding-bottom: 80px;
             }
             
             #slide9 .slide-subtitle {

@@ -84,7 +84,7 @@ function App() {
             <VideoModal
                 isOpen={isVideoModalOpen}
                 onClose={() => setIsVideoModalOpen(false)}
-                videoId="7A_c0vHq8mU"
+                videoId="h_bQ2c-ltZA"
             />
 
             {/* Dynamic Background Elements */}

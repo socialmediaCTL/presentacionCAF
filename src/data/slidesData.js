@@ -18,6 +18,8 @@ export const slidesData = [
         title: 'EXCELENCIA EN LA',
         highlight: 'GESTIÓN ENERGÉTICA',
         subtitle: 'EL PARTNER ESTRATÉGICO DEL ADMINISTRADOR DE FINCAS',
+        image: voltMadrid,
+        overlay: 'dark',
         videoBtn: true,
     },
     {

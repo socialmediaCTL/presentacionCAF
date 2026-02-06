@@ -93,7 +93,7 @@ const Slide = ({ data, active, onOpenVideo }) => {
                         )}
                     </div>
                 ) : type === 'counter' ? (
-                    <div className="space-y-6 flex flex-col items-center landscape-sm:space-y-2">
+                    <div className="space-y-8 flex flex-col items-center landscape-sm:space-y-4">
                         <div className="relative">
                             <div className="text-[120px] md:text-[250px] font-black text-brand-yellow drop-shadow-[0_0_50px_rgba(255,195,0,0.3)] leading-none landscape-sm:text-[80px]">
                                 {count}%
@@ -102,9 +102,19 @@ const Slide = ({ data, active, onOpenVideo }) => {
                                 AUDIT
                             </div>
                         </div>
-                        <div className="space-y-4 max-w-4xl landscape-sm:space-y-1">
-                            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-wider landscape-sm:text-2xl">{subtitle}</h2>
-                            <p className="text-lg md:text-2xl text-gray-300 leading-relaxed font-medium italic landscape-sm:text-sm">{text}</p>
+                        <div className="space-y-6 max-w-4xl landscape-sm:space-y-3">
+                            {/* Subtitle with background */}
+                            <div className="inline-block bg-brand-yellow/10 backdrop-blur-md border-2 border-brand-yellow/30 rounded-2xl px-8 py-4 landscape-sm:px-4 landscape-sm:py-2">
+                                <h2 className="text-3xl md:text-6xl font-black text-brand-yellow uppercase tracking-wider landscape-sm:text-2xl drop-shadow-lg">
+                                    {subtitle}
+                                </h2>
+                            </div>
+                            {/* Text with background */}
+                            <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-6 landscape-sm:px-4 landscape-sm:py-3">
+                                <p className="text-xl md:text-3xl text-white leading-relaxed font-bold landscape-sm:text-base">
+                                    {text}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 ) : type === 'roadmap' ? (

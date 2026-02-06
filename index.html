@@ -654,6 +654,306 @@
             background: #FFD700;
             transform: scale(1.05);
         }
+
+        /* ========================================
+           MOBILE RESPONSIVE DESIGN
+           ======================================== */
+        
+        /* Tablets and smaller (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .slide-title {
+                font-size: 80px;
+                letter-spacing: -1px;
+            }
+            
+            .slide-subtitle {
+                font-size: 24px;
+            }
+            
+            .slide-text {
+                font-size: 18px;
+            }
+            
+            #slide1 .top-logo {
+                width: 300px;
+                top: 10%;
+            }
+            
+            #slide1 .slide-title {
+                font-size: 56px;
+            }
+            
+            #slide5 .counter {
+                font-size: 150px;
+            }
+            
+            .nav-controls {
+                bottom: 20px;
+                padding: 10px 20px;
+            }
+            
+            .slide-dots {
+                right: 20px;
+            }
+        }
+        
+        /* Mobile devices (max-width: 768px) */
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 40px 20px;
+                width: 95%;
+            }
+            
+            .slide-title {
+                font-size: 48px;
+                margin-bottom: 20px;
+                letter-spacing: 0;
+            }
+            
+            .slide-subtitle {
+                font-size: 20px;
+            }
+            
+            .slide-text {
+                font-size: 16px;
+                max-width: 100%;
+            }
+            
+            /* Slide 1 - Portada */
+            #slide1 .top-logo {
+                width: 220px;
+                top: 8%;
+            }
+            
+            #slide1 .slide-content {
+                margin-top: 250px;
+            }
+            
+            #slide1 .slide-title {
+                font-size: 42px;
+            }
+            
+            .video-intro-btn {
+                padding: 14px 30px;
+                font-size: 16px;
+            }
+            
+            /* Slide 5 - Counter */
+            #slide5 .counter {
+                font-size: 100px;
+            }
+            
+            #slide5 .slide-subtitle {
+                font-size: 24px;
+            }
+            
+            /* Slide 10 - Roadmap */
+            #slide10 .slide-title {
+                font-size: 42px;
+                margin-bottom: 30px;
+            }
+            
+            #slide10 .roadmap-steps {
+                flex-direction: column;
+                gap: 30px;
+                align-items: center;
+            }
+            
+            .roadmap-step {
+                max-width: 300px;
+            }
+            
+            .final-url {
+                font-size: 28px;
+                margin-top: 40px;
+            }
+            
+            .website-btn {
+                padding: 16px 40px;
+                font-size: 18px;
+                margin-top: 30px;
+            }
+            
+            /* Navigation */
+            .nav-controls {
+                bottom: 15px;
+                padding: 8px 15px;
+                gap: 10px;
+            }
+            
+            .nav-btn {
+                padding: 10px 18px;
+                font-size: 12px;
+            }
+            
+            .slide-counter {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+            
+            /* Slide dots - hide on mobile */
+            .slide-dots {
+                display: none;
+            }
+            
+            /* Top buttons */
+            .fullscreen-btn,
+            .toggle-script {
+                padding: 8px 15px;
+                font-size: 11px;
+                top: 15px;
+            }
+            
+            .fullscreen-btn {
+                left: 15px;
+            }
+            
+            .toggle-script {
+                right: 15px;
+            }
+            
+            /* Script text */
+            .script-text {
+                bottom: 90px;
+                max-width: 90%;
+                padding: 15px 20px;
+                font-size: 14px;
+            }
+            
+            /* Video modal */
+            .video-container {
+                width: 95%;
+            }
+            
+            .close-modal {
+                top: -45px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Small mobile devices (max-width: 480px) */
+        @media (max-width: 480px) {
+            .slide-title {
+                font-size: 36px;
+                margin-bottom: 15px;
+            }
+            
+            .slide-subtitle {
+                font-size: 18px;
+            }
+            
+            .slide-text {
+                font-size: 14px;
+            }
+            
+            /* Slide 1 */
+            #slide1 .top-logo {
+                width: 180px;
+                top: 5%;
+            }
+            
+            #slide1 .slide-content {
+                margin-top: 200px;
+            }
+            
+            #slide1 .slide-title {
+                font-size: 32px;
+            }
+            
+            .video-intro-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+            
+            /* Slide 5 */
+            #slide5 .counter {
+                font-size: 80px;
+            }
+            
+            #slide5 .slide-subtitle {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            
+            /* Slide 9 */
+            #slide9 .slide-title {
+                font-size: 80px;
+            }
+            
+            #slide9 .slide-subtitle {
+                font-size: 24px;
+            }
+            
+            /* Slide 10 */
+            #slide10 .slide-title {
+                font-size: 32px;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 36px;
+            }
+            
+            .step-title {
+                font-size: 20px;
+            }
+            
+            .step-desc {
+                font-size: 14px;
+            }
+            
+            .final-url {
+                font-size: 22px;
+                margin-top: 30px;
+            }
+            
+            .website-btn {
+                padding: 14px 30px;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+            
+            /* Navigation */
+            .nav-controls {
+                bottom: 10px;
+                padding: 6px 12px;
+                gap: 8px;
+            }
+            
+            .nav-btn {
+                padding: 8px 14px;
+                font-size: 11px;
+            }
+            
+            .slide-counter {
+                font-size: 12px;
+                padding: 0 8px;
+            }
+            
+            /* Top buttons */
+            .fullscreen-btn,
+            .toggle-script {
+                padding: 6px 12px;
+                font-size: 10px;
+                top: 10px;
+            }
+            
+            .fullscreen-btn {
+                left: 10px;
+            }
+            
+            .toggle-script {
+                right: 10px;
+            }
+            
+            /* Progress bar */
+            .progress-bar {
+                height: 3px;
+            }
+        }
+
     </style>
 </head>
 <body>

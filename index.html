@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excelencia en la Gestión Energética - ComparamosTuLuz.es</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>ComparamosTuLuz - Excelencia Energética</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0F1B2D 0%, #1a2332 100%);
+            background: #000000;
             overflow: hidden;
+            color: #ffffff;
         }
 
         .presentation-container {
             width: 100vw;
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 2000px;
-        }
-
-        .slide-wrapper {
-            width: 1280px;
-            height: 720px;
             position: relative;
-            transform-style: preserve-3d;
         }
 
         .slide {
@@ -38,846 +29,390 @@
             left: 0;
             opacity: 0;
             visibility: hidden;
-            transform: translateX(120%) rotateY(60deg) scale(0.7);
-            transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            border-radius: 8px;
-            overflow: hidden;
-            background: #F0F2F5;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .slide.active {
             opacity: 1;
             visibility: visible;
-            transform: translateX(0) rotateY(0deg) scale(1);
             z-index: 10;
         }
 
-        .slide.prev {
-            transform: translateX(-120%) rotateY(-60deg) scale(0.7);
-        }
-
-        /* Image Section */
-        .image-section {
-            width: 50%;
-            height: 720px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .image-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .image-left { order: 1; }
-        .image-right { order: 2; }
-
-        /* Brand Circles on Images */
-        .image-section {
-            position: relative;
-        }
-
-        .image-section::after {
-            content: "";
-            position: absolute;
-            bottom: 15px;
-            left: auto;
-            right: 80px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: #ffc300;
-            box-shadow: 
-                25px 0 0 0 #1c2e4a,
-                50px 0 0 0 white,
-                0 0 4px rgba(0,0,0,0.3),
-                25px 0 4px rgba(0,0,0,0.3),
-                50px 0 4px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        /* Adjust circles for left-positioned images */
-        .image-left::after {
-            right: 80px;
-            left: auto;
-        }
-
-        /* Adjust circles for right-positioned images */
-        .image-right::after {
-            right: 80px;
-            left: auto;
-        }
-
-        /* Content Section */
-        .content-section {
-            flex: 1;
-            padding: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #333333;
-        }
-
-        /* Typography */
-        h1 {
-            font-size: 52px;
-            font-weight: 900;
-            color: #1c2e4a;
-            line-height: 1.1;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 42px;
-            font-weight: 900;
-            color: #1c2e4a;
-            line-height: 1.1;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1c2e4a;
-            margin-bottom: 8px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.4;
-            color: #333333;
-        }
-
-        .subtitle {
-            font-size: 22px;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
-
-        /* Accents */
-        .accent-bar {
-            width: 80px;
-            height: 6px;
-            background-color: #FFC300;
-            margin-bottom: 16px;
-        }
-
-        .accent-line {
-            width: 80px;
-            height: 8px;
-            background-color: #FFC300;
-            margin-bottom: 12px;
-        }
-
-        .accent-square {
-            width: 40px;
-            height: 40px;
-            background-color: #FFC300;
-            margin-bottom: 16px;
-        }
-
-        .web-url {
-            font-size: 18px;
-            font-weight: 700;
-            color: #FFC300;
-            text-decoration: none;
-            background-color: #0F1B2D;
-            padding: 8px 16px;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .centered-container {
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Points Grid */
-        .points-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 16px;
-        }
-
-        .point-box {
-            border-top: 2px solid #0F1B2D;
-            padding-top: 8px;
-        }
-
-        .point-number {
-            font-size: 14px;
-            font-weight: 700;
-            color: #FFC300;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .point-box p {
-            font-size: 18px;
-            margin: 0;
-        }
-
-        /* Points List */
-        .points-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 16px;
-        }
-
-        .point-item {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .point-icon {
-            width: 36px;
-            height: 36px;
-            background-color: #0F1B2D;
-            color: #F0F2F5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 16px;
-        }
-
-        .feature-item {
-            border-top: 1px solid #333333;
-            padding-top: 10px;
-        }
-
-        .feature-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #FFC300;
-            text-transform: uppercase;
-            background-color: #0F1B2D;
-            display: inline-block;
-            padding: 4px 10px;
-            margin-bottom: 8px;
-        }
-
-        .feature-item p {
-            font-size: 17px;
-        }
-
-        /* Mission List */
-        .mission-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 16px;
-        }
-
-        .mission-item {
-            border-left: 4px solid #FFC300;
-            padding-left: 12px;
-        }
-
-        .mission-item h3 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .mission-item p {
-            font-size: 16px;
-        }
-
-        /* Point Title */
-        .point-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #FFC300;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .subtitle-text {
-            font-size: 20px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        /* Grid Layout */
-        .grid-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .info-block {
-            border-left: 4px solid #FFC300;
-            padding-left: 16px;
-        }
-
-        .block-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: #FFC300;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .info-block h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .info-block p {
-            font-size: 17px;
-        }
-
-        /* Columns Grid */
-        .columns-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
-        }
-
-        .column-item {
-            border-top: 2px solid #FFC300;
-            padding-top: 12px;
-        }
-
-        .column-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 10px;
-        }
-
-        .column-item p {
-            font-size: 16px;
-        }
-
-        /* Digital Features */
-        .digital-features {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        /* Audit List */
-        .audit-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .audit-item {
-            border-left: 4px solid #FFC300;
-            padding-left: 16px;
-        }
-
-        .audit-item h3 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .audit-item p {
-            font-size: 17px;
-        }
-
-        /* Model Item */
-        .model-item {
-            margin-bottom: 20px;
-            border-left: 4px solid #FFC300;
-            padding-left: 16px;
-        }
-
-        .model-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 8px;
-        }
-
-        .model-item p {
-            font-size: 17px;
-        }
-
-        /* Sections Grid */
-        .sections-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 20px;
-        }
-
-        .section-box {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-left: 4px solid #FFC300;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 12px;
-        }
-
-        .section-box p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Contact Footer */
-        .contact-footer {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .contact-info {
-            font-size: 22px;
-            font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 12px;
-        }
-
-        .contact-web {
-            font-size: 20px;
-            font-weight: 700;
-            color: #FFC300;
-            text-decoration: none;
-            background-color: #0F1B2D;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-
-
-        /* Cards Grid (Slide 6) */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .card-item {
-            background: #FFFFFF;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border-bottom: 4px solid #FFC300;
-        }
-        
-        .card-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .card-item h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 8px;
-        }
-
-        .card-item p {
-            font-size: 15px;
-            line-height: 1.4;
-            color: #555;
-        }
-
-        /* Tech Features (Slide 10) */
-        .tech-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .tech-card {
-            background: rgba(15, 27, 45, 0.03);
-            border: 1px solid rgba(15, 27, 45, 0.1);
-            padding: 18px;
-            border-radius: 8px;
-        }
-
-        .tech-card h4 {
-            color: #0F1B2D;
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .tech-card p {
-            font-size: 15px;
-            color: #444;
-        }
-
-        /* Roadmap (Slide 12) */
-        .roadmap-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 25px;
-            position: relative;
-        }
-
-        .roadmap-container::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 20px;
-            bottom: 20px;
-            width: 2px;
-            background: #e0e0e0;
-            z-index: 0;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #0F1B2D;
-            color: #FFC300;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 20px;
-            flex-shrink: 0;
-            border: 4px solid #F0F2F5;
-        }
-
-        .step-content {
-            background: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            flex: 1;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .step-content h3 {
-            margin-bottom: 4px;
-            font-size: 18px;
-        }
-
-        .step-content p {
-            font-size: 15px;
-            margin: 0;
-        }
-
-        /* Visual List (Slide 9) */
-        .visual-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .visual-item {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        .big-number {
-            font-size: 48px;
-            font-weight: 900;
-            color: #FFC300;
-            line-height: 0.8;
-            opacity: 0.8;
-        }
-
-        .quote-box {
-            margin-top: 30px;
-            font-style: italic;
-            border-left: 4px solid #FFC300;
-            padding-left: 20px;
-            color: #555;
-        }
-
-        .highlight-box {
-            margin-top: 40px;
-            background-color: #0F1B2D;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 6px solid #FFC300;
-            color: #FFFFFF !important;
-        }
-
-        .highlight-box p {
-            color: #FFFFFF !important;
-            font-size: 20px;
-            font-style: italic;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        /* Model List Large (Slide 11) */
-        .model-list {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .model-item-large h3 {
-            font-size: 26px;
-            color: #0F1B2D;
-            margin-bottom: 10px;
-        }
-
-        .model-item-large p {
-            font-size: 19px;
-            color: #444;
-            line-height: 1.5;
-        }
-
-
-        /* Title Highlight - Dynamic */
-        .highlight-text {
-            color: #FFC300 !important;
-            text-shadow: 0 0 10px rgba(255, 195, 0, 0.3);
-            display: inline-block;
-        }
-
-        /* URL Highlight */
-        .text-white {
-            color: #FFFFFF !important;
-        }
-
-        /* Background Curves */
-        .slide::before {
-            content: "";
+        /* Slide Backgrounds */
+        .slide-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg"><path d="M0,720 C200,600 400,650 600,500 C800,350 1000,400 1280,200" stroke="%231c2e4a" stroke-width="4" fill="none" opacity="0.10"/><path d="M0,600 C300,650 500,550 800,400 C1100,250 1200,300 1280,100" stroke="%231c2e4a" stroke-width="5" fill="none" opacity="0.18"/><path d="M-100,500 C100,600 300,450 600,350 C900,250 1100,300 1400,100" stroke="%231c2e4a" stroke-width="3" fill="none" opacity="0.14"/></svg>');
-            pointer-events: none;
+            object-fit: cover;
             z-index: 0;
         }
 
-        /* Ensure content is above curves */
-        .content-section, .image-section {
+        /* Ken Burns Animation */
+        .slide.active .slide-bg.ken-burns {
+            animation: kenBurns 20s ease-out infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        /* Overlay - 20% opacity for readability */
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Aumentado de 0.3 a 0.5 */
             z-index: 1;
+        }
+
+        .slide-overlay-dark {
+            background: rgba(0, 0, 0, 0.7); /* Aumentado de 0.5 a 0.7 */
+        }
+
+        /* Content Container */
+        .slide-content {
             position: relative;
-        }
-
-        /* Win-Win Content (Slide 10) */
-        .win-win-content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .zero-cost-block {
-            background-color: #0F1B2D;
-            padding: 20px;
-            border-radius: 12px;
+            z-index: 2;
+            max-width: 1400px;
+            width: 90%;
             text-align: center;
-            border: 2px solid #FFC300;
+            padding: 60px;
         }
 
-        .zero-cost-block .zero-cost {
-            font-size: 60px;
-            margin: 0;
-            line-height: 1;
-            color: #FFFFFF !important; /* User request: white */
+        /* Typography */
+        .slide-title {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        .zero-cost-label {
-            color: #FFC300;
-            font-size: 20px;
-            font-weight: 700;
-            margin-top: 10px;
+        .slide-subtitle {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* Professional List (Slide 6) */
-        .professional-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .pro-item {
-            display: flex;
-            gap: 15px;
-            padding: 12px 16px;
-            background: rgba(255, 255, 255, 0.7);
-            border-left: 4px solid #FFC300;
-            border-radius: 0 8px 8px 0;
-            transition: transform 0.2s ease, background 0.2s;
-        }
-
-        .pro-item:hover {
-            transform: translateX(5px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .pro-icon {
+        .slide-text {
             font-size: 24px;
-            display: flex;
-            align-items: flex-start;
-            padding-top: 2px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        .pro-content h3 {
-            font-size: 18px;
+        /* Golden Accent */
+        .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6);
+        }
+
+        /* Slide-specific styles */
+        
+        /* Slide 1 - Portada Refinement */
+        #slide1 {
+            background: #000000;
+            overflow: hidden;
+        }
+
+        .top-logo {
+            position: absolute;
+            top: 15%; /* Bajado un 15% aproximadamente */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            width: 420px; /* Logo más grande para que resalte */
+        }
+
+        .top-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        #slide1 .slide-content {
+            margin-top: 350px; /* Bajar más el contenido */
+        }
+
+        #slide1 .slide-title {
+            font-size: 72px; /* Aumentado de 42px a 72px */
+            line-height: 1.2;
             font-weight: 700;
-            color: #0F1B2D;
-            margin-bottom: 4px;
+            letter-spacing: 1px;
         }
 
-        .pro-content p {
+        .slide-bg-dynamic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 1; /* Máxima visibilidad */
+        }
+
+        .circle-bg {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,195,0,0.2) 0%, rgba(255,195,0,0) 70%);
+            filter: blur(60px);
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+            100% { transform: scale(1.3) translate(30px, 30px); opacity: 0.8; }
+        }
+
+        /* Slide 2 - Madrid Volatility */
+        #slide2 .price-tags {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .price-tag {
+            position: absolute;
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Slide 3 - Watch Gears */
+        #slide3 {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        /* Slide 4 - Balance */
+        #slide4 {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        #slide4 .slide-title {
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        #slide4 .slide-text {
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 5 - 40% with counter animation */
+        #slide5 {
+            background: #000000;
+        }
+
+        #slide5 .counter {
+            font-size: 200px;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), 0 0 60px rgba(255, 195, 0, 0.5);
+            line-height: 1;
+        }
+
+        #slide5 .slide-subtitle {
+            font-size: 36px;
+            margin-top: 30px;
+            color: #FFC300;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 6 - Circuits */
+        #slide6 .slide-title {
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        #slide6 .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 7 - CRM */
+        #slide7 {
+            background: #000000;
+        }
+
+        #slide7 .slide-title {
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        #slide7 .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 8 - Meeting */
+        #slide8 .slide-title {
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        #slide8 .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 9 - 0€ */
+        #slide9 {
+            background: #ffffff;
+        }
+
+        #slide9 .slide-title {
+            color: #0a0a0a;
+            font-size: 120px;
+        }
+
+        #slide9 .slide-subtitle {
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 10 - Roadmap */
+        #slide10 {
+            background: #0a0a0a;
+        }
+
+        #slide10 .slide-title {
+            color: #ffffff;
+            font-size: 64px;
+            margin-bottom: 60px;
+        }
+
+        #slide10 .roadmap-steps {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .roadmap-step {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #FFC300;
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 900;
+            margin: 0 auto 20px;
+        }
+
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .step-desc {
             font-size: 16px;
-            line-height: 1.4;
-            margin: 0;
-            color: #444;
+            color: #cccccc;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .final-url {
+            font-size: 42px;
+            font-weight: 700;
+            color: #FFC300;
+            margin-top: 60px;
+        }
+
+        .website-btn {
+            display: inline-block;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #FFC300 0%, #FFD700 100%);
+            border: none;
+            color: #0a0a0a;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(255, 195, 0, 0.4);
+            text-decoration: none;
+        }
+
+        .website-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 195, 0, 0.6);
         }
 
         /* Navigation */
         .nav-controls {
             position: fixed;
-            bottom: 30px; /* More separation from bottom edge */
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 15px; /* Reduced gap */
+            gap: 20px;
             align-items: center;
             z-index: 1000;
-            background: rgba(15, 27, 45, 0.9);
-            padding: 10px 25px; /* Significant size reduction */
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
             border-radius: 50px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 195, 0, 0.3);
-            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* Auto-hide nav when not hovering near bottom */
-        /*
-        body:not(:hover) .nav-controls {
-            opacity: 0.5;
-        }
-        */
-        
         .nav-btn {
             background: linear-gradient(135deg, #FFC300 0%, #FFD700 100%);
             border: none;
-            color: #0F1B2D;
-            padding: 8px 16px; /* Smaller buttons */
-            font-size: 13px; /* Smaller font */
+            color: #0a0a0a;
+            padding: 12px 24px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            border-radius: 20px;
+            border-radius: 25px;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(255, 195, 0, 0.3);
+            letter-spacing: 1px;
         }
-
-        /* Entry Animations */
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .slide.active h1, 
-        .slide.active h2 {
-            animation: slideInUp 0.6s ease-out forwards;
-            animation-delay: 0.2s;
-            opacity: 0; /* Star hidden */
-        }
-
-        .slide.active .subtitle,
-        .slide.active .subtitle-text {
-            animation: slideInUp 0.6s ease-out forwards;
-            animation-delay: 0.4s;
-            opacity: 0;
-        }
-
-        .slide.active .image-section img {
-            animation: fadeInScale 0.8s ease-out forwards;
-            animation-delay: 0.1s;
-            opacity: 0;
-        }
-
-        /* Staggered animations for list items and cards */
-        .slide.active .points-grid > *,
-        .slide.active .points-list > *,
-        .slide.active .features-grid > *,
-        .slide.active .mission-list > *,
-        .slide.active .split-layout-content > *,
-        .slide.active .audit-list > *,
-        .slide.active .columns-grid > *,
-        .slide.active .digital-features > *,
-        .slide.active .model-list > *,
-        .slide.active .roadmap-container > *,
-        .slide.active .sections-grid > * {
-            animation: slideInUp 0.5s ease-out forwards;
-            opacity: 0;
-        }
-
-        .slide.active .points-grid > *:nth-child(1) { animation-delay: 0.5s; }
-        .slide.active .points-grid > *:nth-child(2) { animation-delay: 0.6s; }
-        .slide.active .points-grid > *:nth-child(3) { animation-delay: 0.7s; }
-        .slide.active .points-grid > *:nth-child(4) { animation-delay: 0.8s; }
-
-        /* Generic staggered loop for up to 6 items */
-        .slide.active div > *:nth-child(1) { animation-delay: 0.5s; }
-        .slide.active div > *:nth-child(2) { animation-delay: 0.6s; }
-        .slide.active div > *:nth-child(3) { animation-delay: 0.7s; }
-        .slide.active div > *:nth-child(4) { animation-delay: 0.8s; }
-        .slide.active div > *:nth-child(5) { animation-delay: 0.9s; }
-        .slide.active div > *:nth-child(6) { animation-delay: 1.0s; }
-
 
         .nav-btn:hover:not(:disabled) {
-            background: linear-gradient(135deg, #FFD700 0%, #FFC300 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 195, 0, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 195, 0, 0.4);
         }
 
         .nav-btn:disabled {
@@ -888,47 +423,27 @@
         .slide-counter {
             color: #FFC300;
             font-weight: 700;
-            font-size: 20px;
-            padding: 0 25px;
+            font-size: 18px;
+            padding: 0 20px;
         }
 
+        /* Progress Bar */
         .progress-bar {
             position: fixed;
             top: 0;
             left: 0;
             width: 0%;
-            height: 5px;
-            background: linear-gradient(90deg, #FFC300 0%, #FFD700 50%, #FFC300 100%);
+            height: 4px;
+            background: linear-gradient(90deg, #FFC300 0%, #FFD700 100%);
             transition: width 0.4s ease;
             z-index: 1001;
             box-shadow: 0 2px 10px rgba(255, 195, 0, 0.5);
         }
 
-        .fullscreen-btn {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            background: rgba(15, 27, 45, 0.95);
-            border: 2px solid #FFC300;
-            color: #FFC300;
-            padding: 12px 24px;
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .fullscreen-btn:hover {
-            background: #FFC300;
-            color: #0F1B2D;
-        }
-
         /* Slide Dots */
         .slide-dots {
             position: fixed;
-            right: 30px;
+            right: 40px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
@@ -938,164 +453,458 @@
         }
 
         .dot {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba(255, 195, 0, 0.3);
+            background: rgba(255, 195, 0, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid rgba(255, 195, 0, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
-            color: rgba(255, 195, 0, 0.7);
-            border: 2px solid rgba(255, 195, 0, 0.4);
+            color: #FFC300;
+            position: relative;
         }
 
         .dot:hover {
-            background: rgba(255, 195, 0, 0.6);
-            transform: scale(1.15);
-            color: #0F1B2D;
+            background: rgba(255, 195, 0, 0.4);
+            transform: scale(1.2);
         }
 
         .dot.active {
             background: #FFC300;
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(255, 195, 0, 0.6);
-            color: #0F1B2D;
+            color: #000;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(255, 195, 0, 0.8);
             border-color: #FFC300;
         }
 
-        /* Fullscreen Mode - Hide everything except nav buttons */
-        :fullscreen .fullscreen-btn,
-        :fullscreen .slide-dots,
-        :fullscreen .progress-bar {
-            display: none !important;
+        .dot-tooltip {
+            position: absolute;
+            right: 55px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #FFC300;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            border: 1px solid #FFC300;
         }
 
-        :-webkit-full-screen .fullscreen-btn,
-        :-webkit-full-screen .slide-dots,
-        :-webkit-full-screen .progress-bar {
-            display: none !important;
+        .dot:hover .dot-tooltip {
+            opacity: 1;
         }
 
-        :-moz-full-screen .fullscreen-btn,
-        :-moz-full-screen .slide-dots,
-        :-moz-full-screen .progress-bar {
-            display: none !important;
+        /* Script Text */
+        .script-text {
+            position: fixed;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1000px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #e0e0e0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 195, 0, 0.2);
+            display: none;
+            z-index: 999;
         }
 
-        :-ms-fullscreen .fullscreen-btn,
-        :-ms-fullscreen .slide-dots,
-        :-ms-fullscreen .progress-bar {
-            display: none !important;
+        .script-text.show {
+            display: block;
+        }
+
+        /* Toggle Script Button */
+        .toggle-script {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: rgba(255, 195, 0, 0.2);
+            border: 2px solid #FFC300;
+            color: #FFC300;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-transform: uppercase;
+        }
+
+        .toggle-script:hover {
+            background: #FFC300;
+            color: #0a0a0a;
+        }
+
+        /* Video Intro Button */
+        .video-intro-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50px);
+            z-index: 10;
+            background: linear-gradient(135deg, #FFC300 0%, #FFD700 100%);
+            border: none;
+            color: #0a0a0a;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(255, 195, 0, 0.4);
+        }
+
+        .video-intro-btn:hover {
+            transform: translate(-50%, -50px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 195, 0, 0.6);
+        }
+
+        .video-intro-btn::before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        /* Fullscreen Button */
+        .fullscreen-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            background: rgba(255, 195, 0, 0.2);
+            border: 2px solid #FFC300;
+            color: #FFC300;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-transform: uppercase;
+        }
+
+        .fullscreen-btn:hover {
+            background: #FFC300;
+            color: #0a0a0a;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal.show {
+            display: flex;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: #FFC300;
+            border: none;
+            color: #0a0a0a;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .close-modal:hover {
+            background: #FFD700;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
-    <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Pantalla Completa</button>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">🖥️ Pantalla Completa</button>
+    <button class="toggle-script" onclick="toggleScript()">📝 Script</button>
     
     <div class="slide-dots" id="slideDots"></div>
     
     <div class="presentation-container">
-        <div class="slide-wrapper" id="slideWrapper"></div>
+        <!-- Slide 1: PORTADA -->
+        <div class="slide active" id="slide1">
+            <div class="slide-bg-dynamic">
+                <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFC300;stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,450 C300,300 600,600 900,450 L1440,300 L1440,900 L0,900 Z" fill="url(#grad1)" opacity="0.4"/>
+                    <path d="M0,200 C400,100 800,400 1200,200 L1440,100" stroke="#FFC300" stroke-width="2" fill="none" opacity="0.4"/>
+                    <path d="M0,600 C300,500 700,800 1100,600 L1440,500" stroke="#FFC300" stroke-width="3" fill="none" opacity="0.3"/>
+                    <path d="M200,0 C400,300 100,600 400,900" stroke="#FFC300" stroke-width="1" fill="none" opacity="0.2"/>
+                    <circle cx="200" cy="200" r="150" fill="rgba(255,195,0,0.08)"/>
+                    <circle cx="1200" cy="700" r="200" fill="rgba(255,195,0,0.06)"/>
+                    <circle cx="1000" cy="300" r="80" fill="rgba(255,195,0,0.04)"/>
+                </svg>
+                <div class="circle-bg" style="width: 500px; height: 500px; top: -100px; right: -100px;"></div>
+                <div class="circle-bg" style="width: 700px; height: 700px; bottom: -250px; left: -250px; animation-duration: 15s;"></div>
+            </div>
+            <div class="top-logo">
+                <img src="logo_comparamos.png" alt="Logo ComparamosTuLuz">
+            </div>
+            <div class="slide-content">
+                <h1 class="slide-title">EXCELENCIA EN LA<br><span class="golden">GESTIÓN ENERGÉTICA</span></h1>
+            </div>
+            <button class="video-intro-btn" onclick="openVideo()">Ver Intro Cantabria</button>
+        </div>
+
+        <!-- Slide 2: ALTA VOLATILIDAD -->
+        <div class="slide" id="slide2">
+            <img src="volt_comercializadoras.jpg" alt="Volt Comercializadoras" class="slide-bg ken-burns">
+            <div class="slide-overlay slide-overlay-dark"></div>
+            <div class="slide-content">
+                <h1 class="slide-title"><span class="golden">ALTA</span><br>VOLATILIDAD</h1>
+                <p class="slide-text">El mercado energético cambia constantemente</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: EL FRENO -->
+        <div class="slide" id="slide3">
+            <img src="slide2_watch_gears.png" alt="Watch Gears" class="slide-bg ken-burns">
+            <div class="slide-overlay slide-overlay-dark"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">EL FRENO A SU<br><span class="golden">CRECIMIENTO</span></h1>
+                <p class="slide-text">La gestión manual limita su potencial</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: INDEPENDENCIA -->
+        <div class="slide" id="slide4">
+            <img src="slide5_balance.png" alt="Balance" class="slide-bg ken-burns">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title"><span class="golden">INTERESES</span><br>ALINEADOS</h1>
+                <p class="slide-text">La comercializadora busca su margen;<br>nosotros protegemos el presupuesto de su comunidad</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: 40% AHORRO -->
+        <div class="slide" id="slide5">
+            <img src="volt_auditoria.png" alt="Volt Auditoría" class="slide-bg">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <div class="counter" id="counter">0%</div>
+                <p class="slide-subtitle">AHORRO INVISIBLE</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: AUTOMATIZACIÓN -->
+        <div class="slide" id="slide6">
+            <img src="volt_automatizacion.jpg" alt="Volt Automatización" class="slide-bg ken-burns">
+            <div class="slide-overlay slide-overlay-dark"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">ESCALABILIDAD<br><span class="golden">PURA</span></h1>
+                <p class="slide-text">Crezca sin límites con tecnología</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: CRM -->
+        <div class="slide" id="slide7">
+            <img src="crm_laptop_user.jpg" alt="CRM Dashboard" class="slide-bg ken-burns">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title"><span class="golden">CONTROL</span><br>TOTAL</h1>
+                <p class="slide-text">Monitorice todo desde un solo panel</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: TRANSPARENCIA -->
+        <div class="slide" id="slide8">
+            <img src="volt_oficina.jpg" alt="Volt Oficina" class="slide-bg ken-burns">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title"><span class="golden">TRANSPARENCIA</span><br>TOTAL</h1>
+                <p class="slide-text">Informes claros para sus comunidades</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: WIN-WIN -->
+        <div class="slide" id="slide9">
+            <img src="volt_familia.png" alt="Volt con Familia" class="slide-bg">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title"><span class="golden">SIN COSTES</span></h1>
+                <p class="slide-subtitle">SIN COMPROMISO</p>
+                <p class="slide-text">Trabajamos solo si usted ahorra</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: ROADMAP -->
+        <div class="slide" id="slide10">
+            <img src="volt_madrid.png" alt="Volt Madrid Cierre" class="slide-bg ken-burns">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+                <h1 class="slide-title">PRÓXIMOS <span class="golden">PASOS</span></h1>
+                <div class="roadmap-steps">
+                    <div class="roadmap-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Convenio</div>
+                        <div class="step-desc">Formalización de colaboración</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Auditoría</div>
+                        <div class="step-desc">Análisis técnico completo</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Propuesta</div>
+                        <div class="step-desc">Presentación de soluciones</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Ahorro</div>
+                        <div class="step-desc">Resultados garantizados</div>
+                    </div>
+                </div>
+                <div class="final-url">www.<span style="color: #ffffff;">comparamostuluz</span>.es</div>
+                <a href="https://www.comparamostuluz.es" target="_blank" class="website-btn">VISITAR</a>
+            </div>
+        </div>
+
     </div>
 
     <div class="nav-controls">
         <button class="nav-btn" id="prevBtn" onclick="previousSlide()">◀ Anterior</button>
         <div class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">12</span>
+            <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
         </div>
         <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Siguiente ▶</button>
     </div>
 
-    <script src="slides-data.js"></script>
+    <div class="script-text" id="scriptText"></div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-container">
+            <button class="close-modal" onclick="closeVideo()">✕ Cerrar</button>
+            <iframe id="videoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <script>
+        const scripts = [
+            "Hoy no les traigo una tarifa más. Les traigo el sistema para transformar la gestión energética de Madrid y Cantabria en una ventaja competitiva para su despacho.",
+            "El mercado actual es un entorno de alta volatilidad donde la incertidumbre es la única constante. Esto no es falta de luz, es un caos de información que les roba tiempo.",
+            "La burocracia interminable y el trato tedioso con call centers son la arena en los engranajes de su despacho. El trabajo manual tiene un límite; nuestra tecnología no.",
+            "Somos una plataforma independiente que actúa como su escudo técnico. Mientras la comercializadora busca su margen, nosotros buscamos proteger el presupuesto de su comunidad.",
+            "El 40% de las comunidades en España paga por potencia que no utiliza. Es dinero tirado a la basura que nuestra tecnología detecta y recupera de forma inmediata.",
+            "Hemos automatizado la auditoría de todo el mercado. Su despacho ahora puede auditar 1.000 comunidades con el mismo esfuerzo que le tomaba auditar una. Eso es crecer sin límites.",
+            "Un panel de control único para monitorizar cada punto de suministro y recibir alertas proactivas antes de cualquier vencimiento.",
+            "Entregamos informes visuales con rigor técnico que eliminan dudas y suspicacias en las Juntas. Facilitamos su labor profesional ante los vecinos.",
+            "Nuestra gestión es totalmente gratuita para el Administrador y la Comunidad. Si no detectamos un ahorro real, no hay cambio. Así de simple.",
+            "Estamos listos para transformar la gestión energética de sus comunidades. Lideremos juntos la transición. Muchas gracias."
+        ];
+
         let currentSlideIndex = 0;
-        const totalSlides = slidesData.length;
+        const totalSlides = 10;
+        let scriptVisible = false;
+        let counterAnimated = false;
 
-        function createSlides() {
-            const wrapper = document.getElementById('slideWrapper');
-            
-            slidesData.forEach((slideData, index) => {
-                const slideDiv = document.createElement('div');
-                slideDiv.className = 'slide';
-                if (index === 0) slideDiv.classList.add('active');
-                
-                // Add image if exists
-                if (slideData.image) {
-                    const imageSection = document.createElement('div');
-                    imageSection.className = `image-section image-${slideData.imagePosition}`;
-                    const img = document.createElement('img');
-                    img.src = slideData.image;
-                    img.alt = `Slide ${slideData.id}`;
-                    imageSection.appendChild(img);
-                    slideDiv.appendChild(imageSection);
-                }
-                
-                // Add content
-                const contentSection = document.createElement('div');
-                contentSection.className = 'content-section';
-                contentSection.innerHTML = slideData.content;
-                
-                // --- INTEGRATED TITLE HIGHLIGHTING ---
-                // Find all headings within this newly created content
-                const headings = contentSection.querySelectorAll('h1, h2, h3, .model-title, .section-title, .feature-title, .column-title');
-                
-                headings.forEach(heading => {
-                    // Safe logic to avoid destroying inner tags if possible, 
-                    // but for titles we generally just have text.
-                    const originalText = heading.innerText.trim();
-                    const words = originalText.split(/\s+/);
-
-                    if (words.length <= 1) return;
-
-                    let highlightCount = 1;
-                    if (words.length > 3) highlightCount = 2; // Last 2 words for long titles
-                    if (highlightCount >= words.length) highlightCount = 1;
-
-                    const normalText = words.slice(0, words.length - highlightCount).join(' ');
-                    const highlightedText = words.slice(words.length - highlightCount).join(' ');
-
-                    // Stronger style with text-shadow for contrast on any background
-                    heading.innerHTML = `${normalText} <span class="highlight-text" style="color: #FFC300 !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">${highlightedText}</span>`;
-                });
-                // -------------------------------------
-
-                slideDiv.appendChild(contentSection);
-                wrapper.appendChild(slideDiv);
-            });
-            
-            createDots();
-            updateNavigation();
-            updateProgressBar();
-        }
+        const slideTitles = [
+            "Portada",
+            "Alta Volatilidad",
+            "El Freno",
+            "Intereses Alineados",
+            "40% Ahorro",
+            "Escalabilidad Pura",
+            "Control Total",
+            "Transparencia Total",
+            "Sin Costes",
+            "Próximos Pasos"
+        ];
 
         function createDots() {
             const dotsContainer = document.getElementById('slideDots');
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('div');
                 dot.className = 'dot';
-                dot.textContent = i + 1; // Add slide number
                 if (i === 0) dot.classList.add('active');
+                dot.textContent = i + 1;
                 dot.onclick = () => showSlide(i);
-                dot.title = `Diapositiva ${i + 1}`;
+                
+                const tooltip = document.createElement('div');
+                tooltip.className = 'dot-tooltip';
+                tooltip.textContent = slideTitles[i];
+                dot.appendChild(tooltip);
+                
                 dotsContainer.appendChild(dot);
             }
+        }
+
+        function animateCounter() {
+            if (counterAnimated) return;
+            counterAnimated = true;
+            
+            const counter = document.getElementById('counter');
+            let current = 0;
+            const target = 40;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                counter.textContent = Math.round(current) + '%';
+            }, 16);
         }
 
         function showSlide(index) {
             const slides = document.querySelectorAll('.slide');
             
             slides.forEach((slide, i) => {
-                slide.classList.remove('active', 'prev');
-                
+                slide.classList.remove('active');
                 if (i === index) {
                     slide.classList.add('active');
-                } else if (i < index) {
-                    slide.classList.add('prev');
                 }
             });
             
@@ -1104,8 +913,15 @@
             });
             
             currentSlideIndex = index;
+            
+            // Trigger counter animation on slide 5 (index 4)
+            if (index === 4) {
+                setTimeout(animateCounter, 300);
+            }
+            
             updateNavigation();
             updateProgressBar();
+            updateScript();
         }
 
         function nextSlide() {
@@ -1132,12 +948,15 @@
             document.getElementById('progressBar').style.width = progress + '%';
         }
 
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
+        function updateScript() {
+            const scriptText = document.getElementById('scriptText');
+            scriptText.textContent = scripts[currentSlideIndex];
+        }
+
+        function toggleScript() {
+            scriptVisible = !scriptVisible;
+            const scriptText = document.getElementById('scriptText');
+            scriptText.classList.toggle('show', scriptVisible);
         }
 
         // Keyboard navigation
@@ -1154,8 +973,8 @@
             } else if (e.key === 'End') {
                 e.preventDefault();
                 showSlide(totalSlides - 1);
-            } else if (e.key === 'f' || e.key === 'F') {
-                toggleFullscreen();
+            } else if (e.key === 's' || e.key === 'S') {
+                toggleScript();
             }
         });
 
@@ -1175,10 +994,57 @@
 
         // Initialize
         window.addEventListener('load', () => {
-             createSlides();
-             // No timeout needed anymore
+            createDots();
+            updateNavigation();
+            updateProgressBar();
+            updateScript();
         });
 
+        // Fullscreen toggle
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('Error al activar pantalla completa:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Open video intro in modal
+        function openVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            // YouTube embed URL with autoplay
+            iframe.src = 'https://www.youtube.com/embed/h_bQ2c-ltZA?autoplay=1&rel=0';
+            modal.classList.add('show');
+        }
+
+        // Close video modal
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            // Stop video by clearing src
+            iframe.src = '';
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside video
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('videoModal');
+                if (modal.classList.contains('show')) {
+                    closeVideo();
+                }
+            }
+        });
     </script>
 </body>
 </html>

@@ -69,12 +69,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.5); /* Aumentado de 0.3 a 0.5 */
             z-index: 1;
         }
 
         .slide-overlay-dark {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+            background: rgba(0, 0, 0, 0.7); /* Aumentado de 0.5 a 0.7 */
         }
 
         /* Content Container */
@@ -124,14 +124,59 @@
 
         /* Slide-specific styles */
         
-        /* Slide 1 - Logo */
+        /* Slide 1 - Portada Refinement */
         #slide1 {
             background: #000000;
+            overflow: hidden;
+        }
+
+        .top-logo {
+            position: absolute;
+            top: 15%; /* Bajado un 15% aproximadamente */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            width: 420px; /* Logo más grande para que resalte */
+        }
+
+        .top-logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        #slide1 .slide-content {
+            margin-top: 350px; /* Bajar más el contenido */
         }
 
         #slide1 .slide-title {
-            font-size: 48px;
-            margin-top: 40px;
+            font-size: 72px; /* Aumentado de 42px a 72px */
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .slide-bg-dynamic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 1; /* Máxima visibilidad */
+        }
+
+        .circle-bg {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,195,0,0.2) 0%, rgba(255,195,0,0) 70%);
+            filter: blur(60px);
+            animation: pulse 10s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+            100% { transform: scale(1.3) translate(30px, 30px); opacity: 0.8; }
         }
 
         /* Slide 2 - Madrid Volatility */
@@ -171,11 +216,13 @@
         }
 
         #slide4 .slide-title {
-            color: #0a0a0a;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         #slide4 .slide-text {
-            color: #333333;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         /* Slide 5 - 40% with counter animation */
@@ -186,41 +233,53 @@
         #slide5 .counter {
             font-size: 200px;
             font-weight: 900;
-            color: #FFC300;
-            text-shadow: 0 0 50px rgba(255, 195, 0, 0.8);
+            color: #ffffff;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), 0 0 60px rgba(255, 195, 0, 0.5);
             line-height: 1;
         }
 
         #slide5 .slide-subtitle {
             font-size: 36px;
             margin-top: 30px;
+            color: #FFC300;
+            text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* Slide 6 - Circuits */
         #slide6 .slide-title {
-            color: #FFC300;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        /* Slide 7 - iPad */
+        #slide6 .golden {
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Slide 7 - CRM */
         #slide7 {
-            background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+            background: #000000;
         }
 
         #slide7 .slide-title {
-            color: #0a0a0a;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        #slide7 .slide-text {
-            color: #333333;
+        #slide7 .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         /* Slide 8 - Meeting */
         #slide8 .slide-title {
-            color: #0a0a0a;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
-        #slide8 .slide-text {
-            color: #333333;
+        #slide8 .golden {
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.8);
         }
 
         /* Slide 9 - 0€ */
@@ -229,22 +288,24 @@
         }
 
         #slide9 .slide-title {
-            color: #000000;
-            font-size: 180px;
+            color: #0a0a0a;
+            font-size: 120px;
         }
 
         #slide9 .slide-subtitle {
-            color: #333333;
-            margin-top: 40px;
+            color: #ffffff;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         /* Slide 10 - Roadmap */
         #slide10 {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            background: #0a0a0a;
         }
 
         #slide10 .slide-title {
-            color: #0a0a0a;
+            color: #ffffff;
             font-size: 64px;
             margin-bottom: 60px;
         }
@@ -278,13 +339,15 @@
         .step-title {
             font-size: 24px;
             font-weight: 700;
-            color: #0a0a0a;
+            color: #ffffff;
             margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .step-desc {
             font-size: 16px;
-            color: #666;
+            color: #cccccc;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         .final-url {
@@ -292,6 +355,29 @@
             font-weight: 700;
             color: #FFC300;
             margin-top: 60px;
+        }
+
+        .website-btn {
+            display: inline-block;
+            margin-top: 40px;
+            background: linear-gradient(135deg, #FFC300 0%, #FFD700 100%);
+            border: none;
+            color: #0a0a0a;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(255, 195, 0, 0.4);
+            text-decoration: none;
+        }
+
+        .website-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 195, 0, 0.6);
         }
 
         /* Navigation */
@@ -367,25 +453,52 @@
         }
 
         .dot {
-            width: 12px;
-            height: 12px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgba(255, 195, 0, 0.3);
+            background: rgba(255, 195, 0, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 195, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFC300;
+            position: relative;
         }
 
         .dot:hover {
-            background: rgba(255, 195, 0, 0.6);
-            transform: scale(1.3);
+            background: rgba(255, 195, 0, 0.4);
+            transform: scale(1.2);
         }
 
         .dot.active {
             background: #FFC300;
-            transform: scale(1.4);
+            color: #000;
+            transform: scale(1.3);
             box-shadow: 0 0 15px rgba(255, 195, 0, 0.8);
             border-color: #FFC300;
+        }
+
+        .dot-tooltip {
+            position: absolute;
+            right: 55px;
+            background: rgba(0, 0, 0, 0.9);
+            color: #FFC300;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            border: 1px solid #FFC300;
+        }
+
+        .dot:hover .dot-tooltip {
+            opacity: 1;
         }
 
         /* Script Text */
@@ -433,10 +546,119 @@
             background: #FFC300;
             color: #0a0a0a;
         }
+
+        /* Video Intro Button */
+        .video-intro-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50px);
+            z-index: 10;
+            background: linear-gradient(135deg, #FFC300 0%, #FFD700 100%);
+            border: none;
+            color: #0a0a0a;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 20px rgba(255, 195, 0, 0.4);
+        }
+
+        .video-intro-btn:hover {
+            transform: translate(-50%, -50px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 195, 0, 0.6);
+        }
+
+        .video-intro-btn::before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        /* Fullscreen Button */
+        .fullscreen-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            background: rgba(255, 195, 0, 0.2);
+            border: 2px solid #FFC300;
+            color: #FFC300;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            text-transform: uppercase;
+        }
+
+        .fullscreen-btn:hover {
+            background: #FFC300;
+            color: #0a0a0a;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-modal.show {
+            display: flex;
+        }
+
+        .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: #FFC300;
+            border: none;
+            color: #0a0a0a;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .close-modal:hover {
+            background: #FFD700;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <div class="progress-bar" id="progressBar"></div>
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">🖥️ Pantalla Completa</button>
     <button class="toggle-script" onclick="toggleScript()">📝 Script</button>
     
     <div class="slide-dots" id="slideDots"></div>
@@ -444,18 +666,41 @@
     <div class="presentation-container">
         <!-- Slide 1: PORTADA -->
         <div class="slide active" id="slide1">
-            <img src="logo_comparamos.png" alt="Logo ComparamosTuLuz" class="slide-bg" style="object-fit: contain; background: #000;">
-            <div class="slide-content">
-                <h1 class="slide-title">EXCELENCIA EN LA<br>GESTIÓN <span class="golden">ENERGÉTICA</span></h1>
+            <div class="slide-bg-dynamic">
+                <svg width="100%" height="100%" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFC300;stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:#000000;stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M0,450 C300,300 600,600 900,450 L1440,300 L1440,900 L0,900 Z" fill="url(#grad1)" opacity="0.4"/>
+                    <path d="M0,200 C400,100 800,400 1200,200 L1440,100" stroke="#FFC300" stroke-width="2" fill="none" opacity="0.4"/>
+                    <path d="M0,600 C300,500 700,800 1100,600 L1440,500" stroke="#FFC300" stroke-width="3" fill="none" opacity="0.3"/>
+                    <path d="M200,0 C400,300 100,600 400,900" stroke="#FFC300" stroke-width="1" fill="none" opacity="0.2"/>
+                    <circle cx="200" cy="200" r="150" fill="rgba(255,195,0,0.08)"/>
+                    <circle cx="1200" cy="700" r="200" fill="rgba(255,195,0,0.06)"/>
+                    <circle cx="1000" cy="300" r="80" fill="rgba(255,195,0,0.04)"/>
+                </svg>
+                <div class="circle-bg" style="width: 500px; height: 500px; top: -100px; right: -100px;"></div>
+                <div class="circle-bg" style="width: 700px; height: 700px; bottom: -250px; left: -250px; animation-duration: 15s;"></div>
             </div>
+            <div class="top-logo">
+                <img src="logo_comparamos.png" alt="Logo ComparamosTuLuz">
+            </div>
+            <div class="slide-content">
+                <h1 class="slide-title">EXCELENCIA EN LA<br><span class="golden">GESTIÓN ENERGÉTICA</span></h1>
+            </div>
+            <button class="video-intro-btn" onclick="openVideo()">Ver Intro Cantabria</button>
         </div>
 
         <!-- Slide 2: ALTA VOLATILIDAD -->
         <div class="slide" id="slide2">
-            <img src="slide1_madrid_chaos.png" alt="Madrid" class="slide-bg ken-burns">
+            <img src="volt_comercializadoras.jpg" alt="Volt Comercializadoras" class="slide-bg ken-burns">
             <div class="slide-overlay slide-overlay-dark"></div>
             <div class="slide-content">
-                <h1 class="slide-title">ALTA<br><span class="golden">VOLATILIDAD</span></h1>
+                <h1 class="slide-title"><span class="golden">ALTA</span><br>VOLATILIDAD</h1>
+                <p class="slide-text">El mercado energético cambia constantemente</p>
             </div>
         </div>
 
@@ -465,6 +710,7 @@
             <div class="slide-overlay slide-overlay-dark"></div>
             <div class="slide-content">
                 <h1 class="slide-title">EL FRENO A SU<br><span class="golden">CRECIMIENTO</span></h1>
+                <p class="slide-text">La gestión manual limita su potencial</p>
             </div>
         </div>
 
@@ -473,61 +719,66 @@
             <img src="slide5_balance.png" alt="Balance" class="slide-bg ken-burns">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <h1 class="slide-title">INTERESES<br><span class="golden">ALINEADOS</span></h1>
+                <h1 class="slide-title"><span class="golden">INTERESES</span><br>ALINEADOS</h1>
                 <p class="slide-text">La comercializadora busca su margen;<br>nosotros protegemos el presupuesto de su comunidad</p>
             </div>
         </div>
 
         <!-- Slide 5: 40% AHORRO -->
         <div class="slide" id="slide5">
+            <img src="volt_auditoria.png" alt="Volt Auditoría" class="slide-bg">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <div class="counter" id="counter">0%</div>
-                <p class="slide-subtitle golden">AHORRO INVISIBLE</p>
-                <p class="slide-text">Potencia sobredimensionada</p>
+                <p class="slide-subtitle">AHORRO INVISIBLE</p>
             </div>
         </div>
 
         <!-- Slide 6: AUTOMATIZACIÓN -->
         <div class="slide" id="slide6">
-            <img src="slide6_circuits.png" alt="Circuits" class="slide-bg ken-burns">
+            <img src="volt_automatizacion.jpg" alt="Volt Automatización" class="slide-bg ken-burns">
             <div class="slide-overlay slide-overlay-dark"></div>
             <div class="slide-content">
-                <h1 class="slide-title">AUDITORÍA<br><span class="golden">AUTOMATIZADA</span></h1>
-                <p class="slide-text">Gestionen 1.000 comunidades con el esfuerzo de una</p>
+                <h1 class="slide-title">ESCALABILIDAD<br><span class="golden">PURA</span></h1>
+                <p class="slide-text">Crezca sin límites con tecnología</p>
             </div>
         </div>
 
         <!-- Slide 7: CRM -->
         <div class="slide" id="slide7">
-            <img src="slide7_ipad.png" alt="iPad" class="slide-bg ken-burns">
+            <img src="crm_laptop_user.jpg" alt="CRM Dashboard" class="slide-bg ken-burns">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <h1 class="slide-title">TODO EN<br>UN <span class="golden">CLIC</span></h1>
-                <p class="slide-text">Dashboard intuitivo con notificaciones automáticas</p>
+                <h1 class="slide-title"><span class="golden">CONTROL</span><br>TOTAL</h1>
+                <p class="slide-text">Monitorice todo desde un solo panel</p>
             </div>
         </div>
 
         <!-- Slide 8: TRANSPARENCIA -->
         <div class="slide" id="slide8">
-            <img src="slide8_meeting.png" alt="Meeting" class="slide-bg ken-burns">
+            <img src="volt_oficina.jpg" alt="Volt Oficina" class="slide-bg ken-burns">
             <div class="slide-overlay"></div>
             <div class="slide-content">
-                <h1 class="slide-title">TRANSPARENCIA<br><span class="golden">TOTAL</span></h1>
-                <p class="slide-text">Informes visuales que eliminan dudas y suspicacias</p>
+                <h1 class="slide-title"><span class="golden">TRANSPARENCIA</span><br>TOTAL</h1>
+                <p class="slide-text">Informes claros para sus comunidades</p>
             </div>
         </div>
 
         <!-- Slide 9: WIN-WIN -->
         <div class="slide" id="slide9">
-            <img src="slide9_zero.png" alt="0€" class="slide-bg">
+            <img src="volt_familia.png" alt="Volt con Familia" class="slide-bg">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
-                <h1 class="slide-title"><span class="golden">0€</span></h1>
-                <p class="slide-subtitle">SIN COSTES · SIN COMPROMISO</p>
+                <h1 class="slide-title"><span class="golden">SIN COSTES</span></h1>
+                <p class="slide-subtitle">SIN COMPROMISO</p>
+                <p class="slide-text">Trabajamos solo si usted ahorra</p>
             </div>
         </div>
 
         <!-- Slide 10: ROADMAP -->
         <div class="slide" id="slide10">
+            <img src="volt_madrid.png" alt="Volt Madrid Cierre" class="slide-bg ken-burns">
+            <div class="slide-overlay"></div>
             <div class="slide-content">
                 <h1 class="slide-title">PRÓXIMOS <span class="golden">PASOS</span></h1>
                 <div class="roadmap-steps">
@@ -543,13 +794,20 @@
                     </div>
                     <div class="roadmap-step">
                         <div class="step-number">3</div>
+                        <div class="step-title">Propuesta</div>
+                        <div class="step-desc">Presentación de soluciones</div>
+                    </div>
+                    <div class="roadmap-step">
+                        <div class="step-number">4</div>
                         <div class="step-title">Ahorro</div>
                         <div class="step-desc">Resultados garantizados</div>
                     </div>
                 </div>
-                <div class="final-url">www.comparamostuluz.es</div>
+                <div class="final-url">www.<span style="color: #ffffff;">comparamostuluz</span>.es</div>
+                <a href="https://www.comparamostuluz.es" target="_blank" class="website-btn">VISITAR</a>
             </div>
         </div>
+
     </div>
 
     <div class="nav-controls">
@@ -562,18 +820,26 @@
 
     <div class="script-text" id="scriptText"></div>
 
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-container">
+            <button class="close-modal" onclick="closeVideo()">✕ Cerrar</button>
+            <iframe id="videoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+
     <script>
         const scripts = [
-            "Bienvenidos. Hoy vamos a hablar de cómo transformar la gestión energética de sus comunidades en una ventaja competitiva real.",
-            "El mercado no es oscuro, es caótico. Cambios regulatorios constantes generan incertidumbre para ustedes y sus vecinos. Madrid no se detiene, pero sus comunidades están pagando precios distintos por el mismo servicio.",
-            "La burocracia interminable les resta tiempo para la gestión estratégica. Si su despacho no escala, es porque la gestión manual es arena en sus engranajes. El trabajo manual tiene un límite; la tecnología no.",
-            "La comercializadora busca su margen; nosotros buscamos proteger el presupuesto de su comunidad. Somos su escudo técnico, eliminando la letra pequeña y las cláusulas abusivas de forma automática.",
-            "El 40% de las comunidades paga por potencia que no utiliza. No es una suposición, es estadística. Nuestra auditoría revela ahorros invisibles de forma inmediata.",
-            "Hemos automatizado el escaneo de más de 30 compañías. Gestionen 1.000 comunidades con el mismo esfuerzo que les tomaba gestionar una sola. Eso es escalabilidad.",
-            "Visualice todas sus comunidades y contratos en un solo dashboard intuitivo con notificaciones automáticas. Control total desde cualquier dispositivo.",
-            "Entregamos informes visuales que eliminan dudas y suspicacias, facilitando la toma de decisiones en las Juntas de Propietarios.",
-            "Nuestra gestión es gratuita para el administrador y la comunidad. Si no hay ahorro real, no hay cambio. Sin riesgo, sin burocracia.",
-            "Estamos listos para liderar juntos la transición energética. Muchas gracias."
+            "Hoy no les traigo una tarifa más. Les traigo el sistema para transformar la gestión energética de Madrid y Cantabria en una ventaja competitiva para su despacho.",
+            "El mercado actual es un entorno de alta volatilidad donde la incertidumbre es la única constante. Esto no es falta de luz, es un caos de información que les roba tiempo.",
+            "La burocracia interminable y el trato tedioso con call centers son la arena en los engranajes de su despacho. El trabajo manual tiene un límite; nuestra tecnología no.",
+            "Somos una plataforma independiente que actúa como su escudo técnico. Mientras la comercializadora busca su margen, nosotros buscamos proteger el presupuesto de su comunidad.",
+            "El 40% de las comunidades en España paga por potencia que no utiliza. Es dinero tirado a la basura que nuestra tecnología detecta y recupera de forma inmediata.",
+            "Hemos automatizado la auditoría de todo el mercado. Su despacho ahora puede auditar 1.000 comunidades con el mismo esfuerzo que le tomaba auditar una. Eso es crecer sin límites.",
+            "Un panel de control único para monitorizar cada punto de suministro y recibir alertas proactivas antes de cualquier vencimiento.",
+            "Entregamos informes visuales con rigor técnico que eliminan dudas y suspicacias en las Juntas. Facilitamos su labor profesional ante los vecinos.",
+            "Nuestra gestión es totalmente gratuita para el Administrador y la Comunidad. Si no detectamos un ahorro real, no hay cambio. Así de simple.",
+            "Estamos listos para transformar la gestión energética de sus comunidades. Lideremos juntos la transición. Muchas gracias."
         ];
 
         let currentSlideIndex = 0;
@@ -581,14 +847,33 @@
         let scriptVisible = false;
         let counterAnimated = false;
 
+        const slideTitles = [
+            "Portada",
+            "Alta Volatilidad",
+            "El Freno",
+            "Intereses Alineados",
+            "40% Ahorro",
+            "Escalabilidad Pura",
+            "Control Total",
+            "Transparencia Total",
+            "Sin Costes",
+            "Próximos Pasos"
+        ];
+
         function createDots() {
             const dotsContainer = document.getElementById('slideDots');
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('div');
                 dot.className = 'dot';
                 if (i === 0) dot.classList.add('active');
+                dot.textContent = i + 1;
                 dot.onclick = () => showSlide(i);
-                dot.title = `Diapositiva ${i + 1}`;
+                
+                const tooltip = document.createElement('div');
+                tooltip.className = 'dot-tooltip';
+                tooltip.textContent = slideTitles[i];
+                dot.appendChild(tooltip);
+                
                 dotsContainer.appendChild(dot);
             }
         }
@@ -713,6 +998,52 @@
             updateNavigation();
             updateProgressBar();
             updateScript();
+        });
+
+        // Fullscreen toggle
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('Error al activar pantalla completa:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Open video intro in modal
+        function openVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            // YouTube embed URL with autoplay
+            iframe.src = 'https://www.youtube.com/embed/h_bQ2c-ltZA?autoplay=1&rel=0';
+            modal.classList.add('show');
+        }
+
+        // Close video modal
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoIframe');
+            // Stop video by clearing src
+            iframe.src = '';
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside video
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('videoModal');
+                if (modal.classList.contains('show')) {
+                    closeVideo();
+                }
+            }
         });
     </script>
 </body>

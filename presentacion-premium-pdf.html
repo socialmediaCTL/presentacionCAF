@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComparamosTuLuz - Excelencia Energética (PDF)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: 297mm 210mm;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-adjust: exact !important;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e5e7eb;
+        }
+
+        .page {
+            width: 297mm;
+            height: 210mm;
+            page-break-after: always;
+            page-break-inside: avoid;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+        
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        @media screen {
+            body {
+                padding: 20px 0;
+            }
+            
+            .page {
+                margin: 0 auto 20px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                break-inside: avoid;
+            }
+        }
+
+        /* Background Images */
+        .page-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .page-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 1;
+        }
+
+        /* Content */
+        .page-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px;
+            max-width: 90%;
+        }
+
+        .page-title {
+            font-size: 120px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .page-subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .golden {
+            color: #FFC300;
+            text-shadow: 0 0 30px rgba(255, 195, 0, 0.6);
+        }
+
+        /* Page-specific styles */
+        .page-light {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+        }
+
+        .page-light .page-title {
+            color: #0a0a0a;
+            text-shadow: none;
+        }
+
+        .page-light .page-subtitle {
+            color: #333333;
+            text-shadow: none;
+        }
+
+        .page-black {
+            background: #000000;
+        }
+
+        .page-dark {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        /* Slide 3 special styling */
+        #page3 .page-subtitle {
+            font-size: 32px;
+            margin-top: 40px;
+        }
+
+        /* Slide 6 special styling */
+        #page6 .page-title {
+            font-size: 100px;
+        }
+
+        #page6 .page-subtitle {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: CAOS DE PRECIOS -->
+    <div class="page" id="page1">
+        <img src="slide1_madrid_chaos.png" alt="Madrid Price Chaos" class="page-bg">
+        <div class="page-overlay"></div>
+        <div class="page-content">
+            <h1 class="page-title">CAOS DE <span class="golden">PRECIOS</span></h1>
+        </div>
+    </div>
+
+    <!-- Page 2: GESTIÓN MANUAL = LÍMITE -->
+    <div class="page page-dark" id="page2">
+        <img src="slide2_watch_gears.png" alt="Watch Gears" class="page-bg">
+        <div class="page-overlay"></div>
+        <div class="page-content">
+            <h1 class="page-title">GESTIÓN MANUAL<br>= <span class="golden">LÍMITE</span></h1>
+        </div>
+    </div>
+
+    <!-- Page 3: 40% -->
+    <div class="page page-black" id="page3">
+        <img src="slide3_forty_percent.png" alt="40 Percent" class="page-bg">
+        <div class="page-content">
+            <p class="page-subtitle golden">Potencia sobredimensionada</p>
+        </div>
+    </div>
+
+    <!-- Page 4: AUDITORÍA AUTOMATIZADA -->
+    <div class="page page-light" id="page4">
+        <img src="slide4_ipad_data.png" alt="iPad Data" class="page-bg">
+        <div class="page-content">
+            <h1 class="page-title">AUDITORÍA<br><span class="golden">AUTOMATIZADA</span></h1>
+        </div>
+    </div>
+
+    <!-- Page 5: ALINEADOS CON EL ADMINISTRADOR -->
+    <div class="page page-light" id="page5">
+        <img src="slide5_balance.png" alt="Balance" class="page-bg">
+        <div class="page-content">
+            <h1 class="page-title">ALINEADOS<br>CON EL <span class="golden">ADMINISTRADOR</span></h1>
+        </div>
+    </div>
+
+    <!-- Page 6: 0€ COSTES. 100% CONTROL -->
+    <div class="page" id="page6">
+        <img src="slide6_family_home.png" alt="Family Home" class="page-bg">
+        <div class="page-overlay"></div>
+        <div class="page-content">
+            <h1 class="page-title"><span class="golden">0€</span> COSTES<br><span class="golden">100%</span> CONTROL</h1>
+            <p class="page-subtitle">www.comparamostuluz.es</p>
+        </div>
+    </div>
+</body>
+</html>

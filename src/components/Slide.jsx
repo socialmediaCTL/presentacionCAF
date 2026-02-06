@@ -52,6 +52,9 @@ const Slide = ({ data, active, onOpenVideo }) => {
             {/* Full Black for Slide 1 per legacy design */}
             {type === 'portada' && <div className="absolute inset-0 bg-black/40" />}
 
+            {/* Darker overlay for counter slide to make text more visible */}
+            {type === 'counter' && <div className="absolute inset-0 bg-black/70" />}
+
             {/* Content */}
             <div className="relative z-10 w-full max-w-7xl px-6 md:px-10 text-center landscape-sm:py-4">
                 {type === 'portada' ? (
@@ -93,7 +96,7 @@ const Slide = ({ data, active, onOpenVideo }) => {
                         )}
                     </div>
                 ) : type === 'counter' ? (
-                    <div className="space-y-8 flex flex-col items-center landscape-sm:space-y-4">
+                    <div className="space-y-6 flex flex-col items-center landscape-sm:space-y-2">
                         <div className="relative">
                             <div className="text-[120px] md:text-[250px] font-black text-brand-yellow drop-shadow-[0_0_50px_rgba(255,195,0,0.3)] leading-none landscape-sm:text-[80px]">
                                 {count}%
@@ -102,19 +105,9 @@ const Slide = ({ data, active, onOpenVideo }) => {
                                 AUDIT
                             </div>
                         </div>
-                        <div className="space-y-6 max-w-4xl landscape-sm:space-y-3">
-                            {/* Subtitle with background */}
-                            <div className="inline-block bg-brand-yellow/10 backdrop-blur-md border-2 border-brand-yellow/30 rounded-2xl px-8 py-4 landscape-sm:px-4 landscape-sm:py-2">
-                                <h2 className="text-3xl md:text-6xl font-black text-brand-yellow uppercase tracking-wider landscape-sm:text-2xl drop-shadow-lg">
-                                    {subtitle}
-                                </h2>
-                            </div>
-                            {/* Text with background */}
-                            <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-6 landscape-sm:px-4 landscape-sm:py-3">
-                                <p className="text-xl md:text-3xl text-white leading-relaxed font-bold landscape-sm:text-base">
-                                    {text}
-                                </p>
-                            </div>
+                        <div className="space-y-4 max-w-4xl landscape-sm:space-y-1">
+                            <h2 className="text-3xl md:text-6xl font-black text-brand-yellow uppercase tracking-wider landscape-sm:text-2xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">{subtitle}</h2>
+                            <p className="text-xl md:text-3xl text-white leading-relaxed font-bold landscape-sm:text-base drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">{text}</p>
                         </div>
                     </div>
                 ) : type === 'roadmap' ? (
@@ -135,12 +128,12 @@ const Slide = ({ data, active, onOpenVideo }) => {
                                         {step.number}
                                     </div>
                                     <h3 className="text-2xl font-black text-brand-yellow uppercase tracking-tight landscape-sm:text-xs">{step.title}</h3>
-                                    <p className="text-sm font-medium text-gray-400 group-hover:text-gray-200 transition-colors uppercase leading-tight landscape-sm:hidden">{step.desc}</p>
+                                    <p className="text-sm font-medium text-white group-hover:text-brand-yellow transition-colors uppercase leading-tight landscape-sm:hidden">{step.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
                         <div className="pt-8 landscape-sm:pt-2">
-                            <div className="text-2xl md:text-4xl font-black text-white/40 mb-6 font-mono tracking-tighter uppercase landscape-sm:text-lg landscape-sm:mb-2">{url}</div>
+                            <div className="text-2xl md:text-4xl font-black text-white mb-6 font-mono tracking-tighter uppercase landscape-sm:text-lg landscape-sm:mb-2">{url}</div>
                             <motion.a
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}

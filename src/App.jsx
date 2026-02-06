@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { slidesData, narratorScripts } from './data/slidesData';
 import Slide from './components/Slide';
 import Navigation from './components/Navigation';
 import Toolbar from './components/Toolbar';
 import VideoModal from './components/VideoModal';
 import ScriptPanel from './components/ScriptPanel';
+import SlideIndicators from './components/SlideIndicators';
 
 function App() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -72,6 +73,12 @@ function App() {
                 total={slidesData.length}
                 onPrev={prevSlide}
                 onNext={nextSlide}
+            />
+
+            <SlideIndicators
+                slides={slidesData}
+                currentSlide={currentSlide}
+                onSlideChange={setCurrentSlide}
             />
 
             <VideoModal

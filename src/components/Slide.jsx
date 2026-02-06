@@ -62,10 +62,7 @@ const Slide = ({ data, active, onOpenVideo }) => {
                             transition={{ delay: 0.5 }}
                             className="relative landscape-sm:scale-75"
                         >
-                            <img src={logo} alt="Logo" className="w-[180px] md:w-[240px] drop-shadow-2xl" />
-                            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[48px] md:text-[72px] font-black text-brand-yellow/20 select-none tracking-tighter">
-                                VOLT
-                            </div>
+                            <img src={logo} alt="Logo" className="w-[270px] md:w-[360px] drop-shadow-2xl" />
                         </motion.div>
 
                         <div className="space-y-4 landscape-sm:space-y-1">
@@ -82,7 +79,10 @@ const Slide = ({ data, active, onOpenVideo }) => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                onClick={onOpenVideo}
+                                onClick={() => {
+                                    console.log('Video button clicked!');
+                                    onOpenVideo();
+                                }}
                                 className="group flex items-center gap-4 px-8 py-4 bg-brand-yellow text-brand-black rounded-full font-black text-sm md:text-base uppercase tracking-widest shadow-[0_0_30px_rgba(255,195,0,0.3)] transition-all landscape-sm:px-6 landscape-sm:py-2 landscape-sm:text-xs"
                             >
                                 <div className="bg-brand-black text-brand-yellow rounded-full p-2 group-hover:scale-110 transition-transform">

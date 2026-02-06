@@ -700,7 +700,7 @@
         /* Mobile devices (max-width: 768px) */
         @media (max-width: 768px) {
             .slide-content {
-                padding: 40px 20px;
+                padding: 40px 20px 100px; /* added 100px bottom padding */
                 width: 95%;
             }
             
@@ -755,8 +755,9 @@
             
             #slide10 .roadmap-steps {
                 flex-direction: column;
-                gap: 30px;
+                gap: 15px; /* reduced gap */
                 align-items: center;
+                margin-top: 20px;
             }
             
             .roadmap-step {
@@ -769,21 +770,31 @@
             }
             
             .website-btn {
-                padding: 16px 40px;
-                font-size: 18px;
-                margin-top: 30px;
+                padding: 14px 35px;
+                font-size: 16px;
+                margin-top: 20px;
             }
             
             /* Navigation */
             .nav-controls {
-                bottom: 15px;
+                bottom: calc(15px + env(safe-area-inset-bottom, 0px));
                 padding: 8px 15px;
                 gap: 10px;
+                background: rgba(0, 0, 0, 0.85); /* Slightly darker */
+                border: 1px solid rgba(255, 195, 0, 0.2);
             }
             
             .nav-btn {
-                padding: 10px 18px;
+                padding: 12px 20px;
                 font-size: 12px;
+                min-width: 100px;
+            }
+            
+            .nav-btn:disabled {
+                opacity: 0.5;
+                background: #333;
+                color: #666;
+                border: 1px solid #444;
             }
             
             .slide-counter {
@@ -836,7 +847,11 @@
         @media (max-width: 480px) {
             .slide-title {
                 font-size: 36px;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
+            }
+            
+            .slide-content {
+                padding-bottom: 90px;
             }
             
             .slide-subtitle {
@@ -891,17 +906,23 @@
             }
             
             .step-number {
-                width: 60px;
-                height: 60px;
-                font-size: 36px;
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                margin-bottom: 5px;
             }
             
             .step-title {
-                font-size: 20px;
+                font-size: 18px;
+                margin-bottom: 2px;
             }
             
             .step-desc {
-                font-size: 14px;
+                font-size: 13px;
+            }
+            
+            #slide10 .roadmap-steps {
+                gap: 12px;
             }
             
             .final-url {
@@ -1131,7 +1152,7 @@
     <script>
         const scripts = [
             // Slide 1: Portada - Liderazgo y Visión
-            "Hoy presentamos una infraestructura diseñada para que el administrador sea el estratega que su comunidad necesita, liderando con datos y soluciones claras.",
+            "E Hoy presentamos una infraestructura diseñada para que el administrador sea el estratega que su comunidad necesita, liderando con datos y soluciones claras.",
             
             // Slide 2: El Mercado - Un Paisaje de Oportunidades
             "Donde otros ven volatilidad, nosotros vemos oportunidad. El administrador tiene hoy la llave para transformar un gasto inevitable en un ahorro planificado para sus comunidades.",
